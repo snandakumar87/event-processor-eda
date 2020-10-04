@@ -31,6 +31,13 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.kafka/connect-mirror -->
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>connect-mirror</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy</artifactId>
@@ -44,6 +51,7 @@
       <artifactId>quarkus-junit5</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
@@ -117,6 +125,14 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
   <profiles>
